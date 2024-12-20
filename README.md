@@ -67,7 +67,7 @@ To mitigate the aforementioned problem, we propose a new model, the t-prior VAE,
 ---
 
 
-## loss derivation for t-prior VAE
+## loss derivation of t-prior VAE
 Given that the decoder assumption remains unchanged, $Loss_{RE}\cong-\frac{1}{L}\sum^L_{i=1}log(p_{\boldsymbol{\theta}}(\textbf{x}^{(i)}|\textbf{z}^{(i)}))$ by Monte Carlo approximation.
 we now derive the KL divergence between the t-distributed encoder and the prior
 
@@ -92,7 +92,7 @@ $$Loss=\frac{1}{N}\sum^N_{i=1}[\sum^d_{j=1}\{x_{i,j}log(p_{i,j})+(1-x_{i,j})log(
 ---
 
 
-## backprop derivation for t-prior VAE
+## backprop derivation of t-prior VAE
 ![image](https://github.com/user-attachments/assets/56d6b149-d0f9-432b-8f2b-233809a7f851)
 
 the only change for calculating backprop calculation from traditional VAE model is the gradient of latent parameters($\mu$ and $log\sigma^2$).
