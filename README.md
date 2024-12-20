@@ -8,7 +8,9 @@ This repository contains an implementation of the **T-Prior Variational Autoenco
 
 Variational Autoencoders (VAEs) often suffer from overregularization due to the strong influence of the KL divergence term between the Gaussian prior and the encoder’s Gaussian distribution. This results in reduced generalization performance.
 
-To address this, we propose a **T-Prior VAE**, which uses a t-distributed latent space. The t-distribution, with its slower tail decay compared to the Gaussian, results in a lower KL divergence. This helps balance the trade-off between reconstruction accuracy and generalization.
+To address this, I propose a **T-Prior VAE**, which uses a t-distributed latent space. The t-distribution, with its slower tail decay compared to the Gaussian, results in a lower KL divergence. This helps balance the trade-off between reconstruction accuracy and generalization.
+
+then pretrained model is used to missing impuation and compare its performance to traditional VAE model.
 
 ---
 
@@ -109,8 +111,25 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 , where $Z \sim N_m(\mathbf{0},\mathbf{I})$ and $V \sim \chi_m(\nu) =^d X_1^2 + \cdots + X_\nu^2 \ (X_i \sim N_m(\mathbf{0},\mathbf{I}), \ i=1,...,\nu)$ 
 
-
 ---
+
+## Data reconstruction
+![image](https://github.com/user-attachments/assets/a40ea973-46d6-448e-b07d-0a72a62b41e4)
+![image](https://github.com/user-attachments/assets/71979a8c-1c8e-45fd-b338-e931f3e06389)
+![image](https://github.com/user-attachments/assets/50794522-3efb-4ced-9d36-a7cbac8e52e8)
+
+
+## Missing imputation
+![image](https://github.com/user-attachments/assets/33427df1-8e9f-41aa-9502-31bbec90eb03)
+
+results for random pixel missing
+![image](https://github.com/user-attachments/assets/8a5f857b-1b32-4ac3-8faa-484816acbe06)
+
+results for random square missing
+![image](https://github.com/user-attachments/assets/be894778-9c7e-4a3a-bf5a-dbe223cd3994)
+
+metric comparision
+![image](https://github.com/user-attachments/assets/155d7e34-b563-4aca-868e-6f23083967fd)
 
 ### Prerequisites
 - Python 3.x
