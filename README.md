@@ -55,9 +55,11 @@ $$p_\textbf{Z}(\textbf{z})\sim t_m(\textbf{0},\textbf{I},\nu),\ \ q_{\boldsymbol
 ## loss derivation for t-prior VAE
 Given that the decoder assumption remains unchanged, $Loss_{RE}\cong-\frac{1}{L}\sum^L_{i=1}log(p_{\boldsymbol{\theta}}(\textbf{x}^{(i)}|\textbf{z}^{(i)}))$ by Monte Carlo approximation.
 we now derive the KL divergence between the t-distributed encoder and the prior
+
 $$Loss_{KL}=KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p(\textbf{z}))=\int q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})log\frac{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}{p(\textbf{z})}=E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(\frac{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}{p(\textbf{z})})]$$
 
 for univariate case: $p(z)\sim t(0,1,\nu), \ q(z|\textbf{x}) \sim t(\mu_q,\sigma_q,\nu)$ 
+
 $$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})]=-log(\sigma_q)+E_{q_(z|x)}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^2)]$$
 
 
