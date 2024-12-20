@@ -120,7 +120,7 @@ the only change for calculating backprop calculation from traditional VAE model 
 ![image](https://github.com/user-attachments/assets/a40ea973-46d6-448e-b07d-0a72a62b41e4)
 
 ### 10 times data reconstruction
-![image](https://github.com/user-attachments/assets/71979a8c-1c8e-45fd-b338-e931f3e06389)
+![image](https://github.com/user-attachments/assets/db2f0e8b-68c5-4a04-b556-efc1e9981b9c)
 
 ### 30 times data reconstruction for same orginal data
 ![image](https://github.com/user-attachments/assets/50794522-3efb-4ced-9d36-a7cbac8e52e8)
