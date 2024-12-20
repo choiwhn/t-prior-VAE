@@ -6,11 +6,12 @@ This repository contains an implementation of the **T-Prior Variational Autoenco
 
 ## Introduction
 
-Variational Autoencoders (VAEs) often suffer from overregularization due to the strong influence of the KL divergence term between the Gaussian prior and the encoder’s Gaussian distribution. This results in reduced generalization performance.
 
-To address this, I propose a **T-Prior VAE**, which uses a t-distributed latent space. The t-distribution, with its slower tail decay compared to the Gaussian, results in a lower KL divergence. This helps balance the trade-off between reconstruction accuracy and generalization.
+Variational Autoencoders (VAEs) are powerful generative models that learn to represent data in a compressed latent space. However, they often encounter overregularization issues due to the Kullback-Leibler (KL) divergence between the encoder's distribution and a standard Gaussian prior. This overregularization can lead to suboptimal generalization performance, particularly in tasks like missing data imputation.
 
-then pretrained model is used to missing impuation and compare its performance to traditional VAE model.
+To address this challenge, we introduce the modified version of Variational Autoencoder (T-Prior VAE). This model employs a t-distribution as the prior for the latent space, capitalizing on its heavier tails compared to the Gaussian distribution. The t-distribution's slower tail decay results in a reduced KL divergence, effectively balancing the trade-off between reconstruction accuracy and generalization.
+
+In our approach, we pretrain the T-Prior VAE and apply it to missing data imputation tasks. We then compare its performance against traditional VAE models using the MNIST dataset to demonstrate its effectiveness.
 
 ---
 
