@@ -133,7 +133,9 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 ### results for random pixel missing
 ![image](https://github.com/user-attachments/assets/8a5f857b-1b32-4ac3-8faa-484816acbe06)
---
+
+---
+
 ### results for random square missing
 ![image](https://github.com/user-attachments/assets/be894778-9c7e-4a3a-bf5a-dbe223cd3994)
 
