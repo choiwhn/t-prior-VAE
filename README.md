@@ -1,3 +1,12 @@
+<script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS_HTML">
+</script>
+<p>
+    $$\boldsymbol{\alpha + \beta = \gamma}$$
+</p>
+
+
+
 # T-Prior Variational Autoencoder (VAE)
 
 This repository contains an implementation of the **T-Prior Variational Autoencoder (VAE)**, a model designed to mitigate the overregularization issue observed in traditional VAEs. The method leverages the unique properties of the t-distribution to improve generalization performance, particularly for outlier pattern identification.
