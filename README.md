@@ -91,7 +91,7 @@ $$Loss=\frac{1}{N}\sum^N_{i=1}[\sum^d_{j=1}\{x_{i,j}log(p_{i,j})+(1-x_{i,j})log(
 ## backprop derivation for t-prior VAE
 ![image](https://github.com/user-attachments/assets/56d6b149-d0f9-432b-8f2b-233809a7f851)
 
-the only change for calculating backprop calculation from traditional VAE model is the gradient of latent parameters($\mu$ and $\log(\sigma^2)$).
+the only change for calculating backprop calculation from traditional VAE model is the gradient of latent parameters($\mu$ and $log(\sigma^2)$).
 
 ---
 
