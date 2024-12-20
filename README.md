@@ -89,16 +89,19 @@ $$Loss=\frac{1}{N}\sum^N_{i=1}[\sum^d_{j=1}\{x_{i,j}log(p_{i,j})+(1-x_{i,j})log(
 
 
 ## backprop derivation for t-prior VAE
+![image](https://github.com/user-attachments/assets/56d6b149-d0f9-432b-8f2b-233809a7f851)
 
-
+the only change for calculating backprop calculation from traditional VAE model is the gradient of latent parameters($\mu$ and $\log(\sigma^2)$).
 
 ---
 
 ## Implementation Details
 
-- **Backpropagation**: Derivations account for the t-distribution's characteristics.
-- **Decoder**: Remains consistent with standard VAEs.
-- **KL Divergence**: Explicitly derived for the t-prior.
+- **Decoder**: Remains consistent with standard VAEs.(bernoulli decoder)
+- **KL Divergence**: since we can get KL divergenc between t-distributions in closed form, approximated by monte calro approximations.
+- **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
+- **hyperparameter** here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if \nu is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
+
 
 ---
 
