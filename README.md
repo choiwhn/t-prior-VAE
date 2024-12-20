@@ -75,11 +75,17 @@ $$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})]=-log(\sigma_q)+E_{q_(z|x)}[-\frac{\nu+1}{
 
 Applying the Monte Carlo approximation,
 
-$$\cong-log(\sigma_q)+ \frac{1}{L}\sum^L_{i=1}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z^{(i)}-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^{(i)^2})]$$
+$$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})] \cong-log(\sigma_q)+ \frac{1}{L}\sum^L_{i=1}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z^{(i)}-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^{(i)^2})]$$
 
 Thus, the loss function for the univariate distribution becomes as
 
 $$Loss = Loss_{RE} + Loss_{KL} \cong-\frac{1}{L}\sum^L_{i=1}log(p(x^{(i)}|z^{(i)}))-log(\sigma_q)+\frac{1}{L}\sum^L_{i=1}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z^{(i)}-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^{(i)^2})]$$
+
+setting L=1,
+
+$$Loss=\frac{1}{N}\sum^N_{i=1}[\sum^d_{j=1}\{x_{i,j}log(p_{i,j})+(1-x_{i,j})log(1-p_{i,j})\}+\sum^m_{j=1}\{-log(\sigma_{i,j})-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z_{i,j}-\mu_{i,j}}{\sigma_{i,j}})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z_{i,j}^2)]\}$$
+
+---
 
 
 ## backprop derivation for t-prior VAE
