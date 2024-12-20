@@ -12,31 +12,19 @@ To address this, we propose a **T-Prior VAE**, which uses a t-distributed latent
 
 ---
 
-## Key Features
+## Overregularization of traditional VAEs
 
-1. **T-Distributed Latent Space**:
-   - Slower tail decay reduces overregularization.
-   - Improved generalization performance, especially for identifying outliers.
 
-2. **Reparameterization Trick**:
-   - Extended to support the t-distribution, leveraging its location-scale family properties.
-
-3. **Hyperparameter Control**:
-   - The parameter \( \nu \) adjusts the tail heaviness of the t-distribution:
-     - **Large \( \nu \)**: Behaves like a Gaussian VAE.
-     - **Small \( \nu \)**: May lead to poor learning due to heavy-tailed distribution.
 
 ---
 
-## Loss Function
+## t-distribution
 
-The model minimizes a modified evidence lower bound (ELBO):
+## loss derivation for t-prior VAE
 
-\[
-\mathcal{L} = \text{Reconstruction Loss} + \text{KL Divergence between t-distribution and prior}
-\]
+## backprop derivation for t-prior VAE
 
-Monte Carlo approximations are used for efficient gradient computation.
+
 
 ---
 
@@ -48,15 +36,7 @@ Monte Carlo approximations are used for efficient gradient computation.
 
 ---
 
-## Getting Started
-
 ### Prerequisites
 - Python 3.x
 - TensorFlow/PyTorch (specify your choice)
 - Libraries: NumPy, SciPy
-
-### Installation
-Clone this repository:
-```bash
-git clone https://github.com/yourusername/t-prior-vae.git
-cd t-prior-vae
