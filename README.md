@@ -18,6 +18,7 @@ To address this, we propose a **T-Prior VAE**, which uses a t-distributed latent
 Caused by the strong influence of the KL divergence term between the gaussian prior and the gaussian encoder's distribution
 
 Recap variational inference: 
+
 $$log(p(\textbf{x}))=E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}))]-KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p(\textbf{z}))+KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p_{\boldsymbol{\theta}}(\textbf{z}|\textbf{x}))$$
 
 Define loss function as: $Loss=-E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}))]+KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p(\textbf{z})):= Loss_{RE} + Loss_{KL}$
