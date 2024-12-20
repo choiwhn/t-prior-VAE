@@ -105,7 +105,7 @@ the only change for calculating backprop calculation from traditional VAE model 
 - **KL Divergence**: since we can get KL divergenc between t-distributions in closed form, approximated by monte calro approximations.
 - **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
 - **hyperparameter**: here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if \nu is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
-- **sampling from t-distribution**: representative of t-distribution can be sampled by $\frac{Z}{V/\nu}$, where $Z \sim N_m(\mathbf{0},\mathbf{I})$ and $V \sim \chi_m(\nu) =^d Z_1^2 + \cdots + Z_1^2 $ 
+- **sampling from t-distribution**: representative of t-distribution can be sampled by $\frac{Z}{V/\nu}$, where $Z \sim N_m(\mathbf{0},\mathbf{I})$ and $V \sim \chi_m(\nu) =^d N_1^2 + \cdots + N_\nu^2 (N_i \sim N_m(\mathbf{0},\mathbf{I}))$ 
 
 
 ---
