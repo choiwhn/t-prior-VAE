@@ -34,7 +34,9 @@ The tail decay of the t-distribution is significantly slower compared to the Gau
 
 therefore, KL divergence between a t-distribution is lower then that of a gaussian distribution
 
-here's why in detail: $KL(q(x)||p(x))=\int q(x)log\frac{q(x)}{p(x)}$
+here's why in detail: 
+
+$$KL(q(x)||p(x))=\int q(x)log\frac{q(x)}{p(x)}$$
 
 In distributions with lighter tails, such as the Gaussian, tail differences significantly influence the KL divergence. The rapid exponential decay of these tails magnifies the relative values of the probability density function
 
