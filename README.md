@@ -13,7 +13,7 @@ To address this, we propose a **T-Prior VAE**, which uses a t-distributed latent
 ---
 
 ## Overregularization of traditional VAEs
-![image](https://github.com/user-attachments/assets/274c5c73-3812-49a1-a594-f0ccca597a89, alt="LaTeX Equation" width="300")
+![image](https://github.com/user-attachments/assets/274c5c73-3812-49a1-a594-f0ccca597a89)
 
 Caused by the strong influence of the KL divergence term between the gaussian prior and the gaussian encoder's distribution
 
