@@ -43,12 +43,24 @@ Therefore, the KL divergence between the t-distribution is relatively smaller co
 **Based on the above reasoning, we expect that a VAE with t-distributed latent space would improve generalization performance, particularly in identifying outlier patterns**
 
 
-
-
 ---
 
 
+## t-prior VAE
+Gaussian VAE:
+$$p_\textbf{Z}(\textbf{z})\sim N_m(\textbf{0},\textbf{I}),\ \  q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim N_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x})),\ \  p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
+To mitigate the aforementioned problem, we propose a new model, the t-prior VAE, defined as follows:
+$$p_\textbf{Z}(\textbf{z})\sim t_m(\textbf{0},\textbf{I},\nu),\ \ q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim t_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x}),\nu),\ \ p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
+
 ## loss derivation for t-prior VAE
+Given that the decoder assumption remains unchanged, $Loss_{RE}\cong-\frac{1}{L}\sum^L_{i=1}log(p_{\boldsymbol{\theta}}(\textbf{x}^{(i)}|\textbf{z}^{(i)}))$ by Monte Carlo approximation.
+we now derive the KL divergence between the t-distributed encoder and the prior
+$$Loss_{KL}=KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p(\textbf{z}))=\int q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})log\frac{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}{p(\textbf{z})}=E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(\frac{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}{p(\textbf{z})})]$$
+
+for univariate case: $p(z)\sim t(0,1,\nu), \ q(z|\textbf{x}) \sim t(\mu_q,\sigma_q,\nu)$ 
+$$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})]=-log(\sigma_q)+E_{q_(z|x)}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^2)]$$
+
+
 
 ## backprop derivation for t-prior VAE
 
