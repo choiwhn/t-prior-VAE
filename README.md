@@ -28,7 +28,9 @@ $$Loss=-E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(p_{\boldsymbol{\the
 ---
 
 ## t-distribution
-Note that t-distribution belongs to the location-scale family: $Y=\mu+\sigma X, \ f_Y(y)=\frac{1}{\sigma}f_X(\frac{x-\mu}{\sigma}) $
+Note that t-distribution belongs to the location-scale family: 
+
+$$Y=\mu+\sigma X, \ f_Y(y)=\frac{1}{\sigma}f_X(\frac{x-\mu}{\sigma}) $$
 
 probability density function(pdf)s of gaussian and t distribution: 
 
