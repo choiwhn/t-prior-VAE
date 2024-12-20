@@ -32,9 +32,9 @@ Note that t-distribution belongs to the location-scale family: $Y=\mu+\sigma X, 
 
 probability density function(pdf)s of gaussian and t distribution: 
 
-$$pdf_{t(\mu,\sigma^2,\nu)}(x)=\frac{\Gamma(\frac{\nu+1}{2})}{\sigma\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{1}{\nu}(\frac{x-\mu}{\sigma})^2)^{-\frac{\nu+1}{2}}$$
-
 $$pdf_{N(\mu,\sigma^2)}(x)=\frac{1}{\sigma\sqrt{2\pi}}exp(-\frac{1}{2}(\frac{x-\mu}{\sigma})^2)$$
+
+$$pdf_{t(\mu,\sigma^2,\nu)}(x)=\frac{\Gamma(\frac{\nu+1}{2})}{\sigma\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{1}{\nu}(\frac{x-\mu}{\sigma})^2)^{-\frac{\nu+1}{2}}$$
 
 The tail decay of the t-distribution is significantly slower compared to the Gaussian distribution.
 
@@ -56,8 +56,11 @@ Therefore, the KL divergence between the t-distribution is relatively smaller co
 
 ## t-prior VAE
 Gaussian VAE:
+
 $$p_\textbf{Z}(\textbf{z})\sim N_m(\textbf{0},\textbf{I}),\ \  q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim N_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x})),\ \  p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
+
 To mitigate the aforementioned problem, we propose a new model, the t-prior VAE, defined as follows:
+
 $$p_\textbf{Z}(\textbf{z})\sim t_m(\textbf{0},\textbf{I},\nu),\ \ q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim t_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x}),\nu),\ \ p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
 
 ## loss derivation for t-prior VAE
@@ -69,7 +72,6 @@ $$Loss_{KL}=KL(q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})||p(\textbf{z}))=\int
 for univariate case: $p(z)\sim t(0,1,\nu), \ q(z|\textbf{x}) \sim t(\mu_q,\sigma_q,\nu)$ 
 
 $$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})]=-log(\sigma_q)+E_{q_(z|x)}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^2)]$$
-
 
 
 ## backprop derivation for t-prior VAE
