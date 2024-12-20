@@ -31,6 +31,7 @@ $$Loss=-E_{q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x})}[log(p_{\boldsymbol{\the
 Note that t-distribution belongs to the location-scale family: $Y=\mu+\sigma X, \ f_Y(y)=\frac{1}{\sigma}f_X(\frac{x-\mu}{\sigma}) $
 
 probability density function(pdf)s of gaussian and t distribution: 
+
 $$pdf_{t(\mu,\sigma^2,\nu)}(x)=\frac{\Gamma(\frac{\nu+1}{2})}{\sigma\sqrt{\nu\pi}\Gamma(\frac{\nu}{2})}(1+\frac{1}{\nu}(\frac{x-\mu}{\sigma})^2)^{-\frac{\nu+1}{2}}$$
 
 $$pdf_{N(\mu,\sigma^2)}(x)=\frac{1}{\sigma\sqrt{2\pi}}exp(-\frac{1}{2}(\frac{x-\mu}{\sigma})^2)$$
