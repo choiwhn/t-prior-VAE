@@ -104,7 +104,7 @@ the only change for calculating backprop calculation from traditional VAE model 
 ## Implementation Details
 
 - **Decoder**: Remains consistent with standard VAEs.(bernoulli decoder)
-- **KL Divergence**: since we can get KL divergenc between t-distributions in closed form, approximated by monte calro approximations.
+- **KL Divergence**: since we can get KL divergence between t-distributions in closed form, approximated by monte calro approximations.
 - **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
 - **hyperparameter**: here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if \nu is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
 - **sampling from t-distribution**: representative of t-distribution can be sampled by $\frac{Z}{V/\nu}$
@@ -114,21 +114,29 @@ the only change for calculating backprop calculation from traditional VAE model 
 ---
 
 ## Data reconstruction
+
+### Loss convergence & hyperparameter settings
 ![image](https://github.com/user-attachments/assets/a40ea973-46d6-448e-b07d-0a72a62b41e4)
+
+### 10 times data reconstruction
 ![image](https://github.com/user-attachments/assets/71979a8c-1c8e-45fd-b338-e931f3e06389)
+
+### 30 times data reconstruction for same orginal data
 ![image](https://github.com/user-attachments/assets/50794522-3efb-4ced-9d36-a7cbac8e52e8)
 
 
 ## Missing imputation
+
+### imputation workflow
 ![image](https://github.com/user-attachments/assets/33427df1-8e9f-41aa-9502-31bbec90eb03)
 
-results for random pixel missing
+### results for random pixel missing
 ![image](https://github.com/user-attachments/assets/8a5f857b-1b32-4ac3-8faa-484816acbe06)
 
-results for random square missing
+### results for random square missing
 ![image](https://github.com/user-attachments/assets/be894778-9c7e-4a3a-bf5a-dbe223cd3994)
 
-metric comparision
+### metric comparision
 ![image](https://github.com/user-attachments/assets/155d7e34-b563-4aca-868e-6f23083967fd)
 
 ### Prerequisites
