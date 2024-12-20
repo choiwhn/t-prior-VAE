@@ -56,10 +56,12 @@ Therefore, the KL divergence between the t-distribution is relatively smaller co
 
 ## t-prior VAE
 Gaussian VAE:
+![image](https://github.com/user-attachments/assets/beacf0ce-b669-412b-9f3c-d7a6225b75dd)
 
 $$p_\textbf{Z}(\textbf{z})\sim N_m(\textbf{0},\textbf{I}),\ \  q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim N_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x})),\ \  p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
 
 To mitigate the aforementioned problem, we propose a new model, the t-prior VAE, defined as follows:
+![image](https://github.com/user-attachments/assets/d5183570-bf8e-4827-a62b-9e55178ec543)
 
 $$p_\textbf{Z}(\textbf{z})\sim t_m(\textbf{0},\textbf{I},\nu),\ \ q_{\boldsymbol{\phi}}(\textbf{z}|\textbf{x}) \sim t_m(\boldsymbol{\mu}_{\boldsymbol{\phi}}(\textbf{x}),\boldsymbol{\Sigma}_{\boldsymbol{\phi}}(\textbf{x}),\nu),\ \ p_{\boldsymbol{\theta}}(\textbf{x}|\textbf{z}) \sim Multivariate \ bernoulli$$
 
@@ -100,12 +102,13 @@ the only change for calculating backprop calculation from traditional VAE model 
 - **Decoder**: Remains consistent with standard VAEs.(bernoulli decoder)
 - **KL Divergence**: since we can get KL divergenc between t-distributions in closed form, approximated by monte calro approximations.
 - **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
-- **hyperparameter** here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if \nu is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
+- **hyperparameter**: here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if \nu is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
+- **generating representatives of t-distribution**: 
 
 
 ---
 
 ### Prerequisites
 - Python 3.x
-- TensorFlow/PyTorch (specify your choice)
-- Libraries: NumPy, SciPy
+- PyTorch
+- Libraries: NumPy
