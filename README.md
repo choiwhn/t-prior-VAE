@@ -114,6 +114,7 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 ## Implementation Details
 
+- **optimization**: stochastic gradient descent(SGD) is implemented.
 - **Decoder**: Remains consistent with standard VAEs.(bernoulli decoder)
 - **KL Divergence**: since we cannot get KL divergence between t-distributions in closed form, it is approximated by monte calro approximations.
 - **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
