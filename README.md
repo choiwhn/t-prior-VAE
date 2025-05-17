@@ -2,6 +2,14 @@
 
 This repository contains an implementation of the **T-Prior Variational Autoencoder (VAE)**, a model designed to mitigate the overregularization issue observed in traditional VAEs. The method leverages the unique properties of the t-distribution to improve generalization performance, particularly for outlier pattern identification.
 
+This project
+
+  - implements t-prior VAE by one with entirely in NumPy and one with PyTorch.
+
+  - provides implementation of standard VAE also.
+  
+  - evaluates its performance compared to standard VAEs, with data recontruction problem and missing data imputation.
+
 ---
 
 ## Introduction
