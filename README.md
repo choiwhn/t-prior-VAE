@@ -149,10 +149,3 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 ### metric comparision
 ![image](https://github.com/user-attachments/assets/155d7e34-b563-4aca-868e-6f23083967fd)
-
----
-
-### Prerequisites
-- Python 3.x
-- PyTorch
-- Libraries: NumPy
