@@ -116,7 +116,7 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 - **optimization**: stochastic gradient descent(SGD) is implemented.
 - **Decoder**: Remains consistent with standard VAEs.(bernoulli decoder)
-- **KL Divergence**: since we cannot get KL divergence between t-distributions in closed form, it is approximated by monte calro approximations.
+- **KL Divergence**: since we cannot get KL divergence between t-distributions in closed form, it is approximated by monte calro approximations with sampling from encoder network.
 - **Reparameterization trick**: it is available for t-distribution since it belongs to location-scale family.
 - **$\nu$ as a hyperparameter**: here the degree of freedom of t-distributed prior and encoder is treated as hyperparameter. If $\nu$ is too large, the model behaves like a Gaussian VAE, potentially leading to overregularization. Conversely, if $\nu$ is too small, the model may suffer from poor learning due to sampling from a heavy-tailed distribution.
 - **sampling from t-distribution**: representative of t-distribution can be sampled by $\frac{Z}{V/\nu}$
