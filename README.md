@@ -92,7 +92,7 @@ Applying the Monte Carlo approximation,
 
 $$E_{q(z|x)}[log(\frac{q(z|x)}{p(z)})] \cong-log(\sigma_q)+ \frac{1}{L}\sum^L_{i=1}[-\frac{\nu+1}{2}log(1+\frac{1}{\nu}(\frac{z^{(i)}-\mu_q}{\sigma_q})^2)+\frac{\nu+1}{2}log(1+\frac{1}{\nu}z^{(i)^2})]$$
 
-,where $z^{(i)}$ is i-th forwarded value of latent space by encoder $q(z|x)$
+,where $z^{(i)}$ is i-th forwarded value of latent space by encoder $q(z|x^{(i)})$
 
 Thus, the loss function for the univariate distribution becomes as
 
