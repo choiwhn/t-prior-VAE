@@ -4,11 +4,11 @@ This repository contains an implementation of the **T-Prior Variational Autoenco
 
 This project
 
-  - implements t-prior VAE by one with entirely in NumPy and one with PyTorch.
+  - offers two implementations of a t-prior variational autoencoder (VAE)—one written entirely in NumPy and the other in PyTorch.
 
-  - provides implementation of standard VAE also.
+  - also includes an implementation of the standard Gaussian-prior VAE.
   
-  - evaluates its performance compared to standard VAEs, with data recontruction problem and missing data imputation.
+  -  evaluate and compare their performance on both data reconstruction tasks and missing-data imputation.
 
 ---
 
