@@ -161,3 +161,13 @@ the only change for calculating backprop calculation from traditional VAE model 
 
 ### metric comparision
 ![image](https://github.com/user-attachments/assets/155d7e34-b563-4aca-868e-6f23083967fd)
+
+---
+
+## references
+Abiri, N., & Ohlsson, M. (2020). Variational auto-encoders with Student's t-prior.
+
+Kim, J., Kwon, J., Cho, M., Lee, H., & Won, J.-H. (2023). t³-Variational Autoencoder: Learning Heavy-tailed Data with Student's t and Power Divergence.
+
+Raschka, S., Liu, Y. (H.), & Mirjalili, V. (2022). Machine learning with PyTorch and scikit-learn: Develop machine learning and deep learning models with Python. Packt Publishing.
+
