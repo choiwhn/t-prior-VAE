@@ -74,7 +74,7 @@ Gaussian VAE:
 To mitigate the aforementioned problem, we propose a new model, the t-prior VAE, defined as follows:
 ![image](https://github.com/user-attachments/assets/d5183570-bf8e-4827-a62b-9e55178ec543)
 
-Note taht the encoder covariance is diagonal, i.e. $\sum_\pi(x) = diag\sigma^2(x)$
+Note that the encoder covariance is diagonal, i.e. $\sum_\phi(x) = diag\sigma^2_{\phi}(x)$
 
 ---
 
